@@ -7,15 +7,15 @@ function card_default_options() {
         background_color: "white",
         default_color: "black",
         default_icon: "ace",
-        default_title_size: "13",
+        default_title_size: "16",
         page_size: "A4",
-        page_rows: 3,
-        page_columns: 3,
+        page_rows: 2,
+        page_columns: 2,
         card_arrangement: "doublesided",
-        card_size: "25x35",
+        card_size: "35x50",
         card_count: null,
         icon_inline: true,
-        rounded_corners: true
+        rounded_corners: false
     };
 }
 
@@ -86,7 +86,9 @@ function card_data_split_params(value) {
 function card_element_title(card_data, options) {
     var title = card_data.title || "";
     var title_size = card_data.title_size || options.default_title_size || 'normal';
-    return '<div class="card-title card-title-' + title_size + '">' + title + '</div>';
+    var color = card_data_color_front(card_data, options);
+    var style = "color:" + color + ";";
+    return '<div class="card-title card-title-' + title_size + '" style="' + style + '">' + title + '</div>';
 }
 
 function card_element_icon(card_data, options) {
@@ -125,13 +127,12 @@ function card_element_picture(params, card_data, options) {
 
 function card_element_ruler(params, card_data, options) {
     var color = card_data_color_front(card_data, options);
-    var fill = 'fill="' + color + '"';
-    var stroke = 'stroke="' + color + '"';
+    var style = "border-color:" + color + ";";
 
-    var result = "";
-    result += '<svg class="card-ruler" height="1" width="100" viewbox="0 0 100 1" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">';
-    result += '    <polyline points="0,0 100,0.5 0,1" ' + fill + '></polyline>';
-    result += '</svg>';
+    var result = "<hr class='card-rule' style='" + style + "'>";
+    // result += '<svg class="card-ruler" height="1" width="100" viewbox="0 0 100 1" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">';
+    // result += '    <polyline points="0,0 100,0.5 0,1" ' + fill + '></polyline>';
+    // result += '</svg>';
     return result;
 }
 

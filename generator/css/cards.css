@@ -1,10 +1,10 @@
 .card {
-    border: 2mm solid;
+    border: 1mm solid;
     box-sizing: border-box;
     position: relative;
     display: flex;
     flex-direction: column;
-    font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+    font-family: 'ScalySans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
     font-size: 8pt;
     overflow: hidden;
 }
@@ -14,9 +14,7 @@
 }
 
 .card-content-container {
-    padding:2mm;
-    padding-top:1mm;
-    border-radius: 2mm;
+    padding:0 3mm 3mm;
     margin-top:0px;
     background-color: white;
     border-color: inherit;
@@ -28,9 +26,9 @@
 
 .card-back {
 /*     background-color: white; */
-    border-radius: 4mm;
+/*    border-radius: 4mm;*/
     border-color: inherit;
-    margin: 3mm;
+    margin: 0mm;
     flex: 1;
     display: flex;
 }
@@ -95,16 +93,20 @@
 }
 
 .card-title {
-    height: 8mm;
-    padding-left: 2mm;
-    font-family: Lora, 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 14mm;
+    padding: 2mm 3mm 1mm;
+    font-family: 'MrEaves', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
     font-variant: small-caps;
-    font-weight: bold;
-    background-color: inherit;
-    color: white;
+    font-weight: normal;
+    line-height: 1;
+    background-color: white;
+    color: black;
 }
 .card-title-16 {
-    font-size: 16pt;
+    font-size: 28pt;
     line-height: 6.5mm;
 }
 .card-title-15 {
@@ -132,11 +134,14 @@
     line-height: 7.5mm;
 }
 .card-subtitle {
-    margin-bottom: 0.0em;
-    line-height: 18px;
-    font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
-    font-size: 10pt;
-    font-style: italic;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 3mm;
+    margin-top: -.5mm;
+    line-height: 1;
+    font-family: 'MrEaves', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+    font-size: 9pt;
 }
 .card-picture {
     height: 80px;
@@ -216,11 +221,11 @@
     display: inline;
 }
 
-.card-ruler {
+.card-rule {
+    margin: .4em 0;
+    border-top: 1pt solid #eee;
     width: 100%;
-    height: 1.0mm;
-    margin-top: 0.3em;
-    margin-bottom: 0.3em;
+    height: 0px;
 }
 
 .card-box {

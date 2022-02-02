@@ -93,13 +93,15 @@ function card_element_title(card_data, options) {
 
 function card_element_icon(card_data, options) {
     var icon = card_data_icon_front(card_data, options);
+    var color = card_data_color_front(card_data, options);
+    var style = "border-color:" + color + ";";
     var classname = "icon";
     if (options.icon_inline) {
         classname = "inlineicon";
     }
 
     var result = "";
-    result += '<div class="card-title-' + classname + '-container">';
+    result += '<div class="card-title-' + classname + '-container" style="' + style + '">';
     result += '    <div class="card-title-' + classname + ' icon-' + icon + '">';
     result += '    </div>';
     result += '</div>';

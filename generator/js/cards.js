@@ -11,7 +11,7 @@ function card_default_options() {
         page_size: "A4",
         page_rows: 2,
         page_columns: 2,
-        card_arrangement: "doublesided",
+        card_arrangement: "front_only",
         card_size: "35x50",
         card_count: null,
         icon_inline: true,

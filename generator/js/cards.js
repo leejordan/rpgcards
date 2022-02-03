@@ -87,7 +87,7 @@ function card_element_title(card_data, options) {
     var title = card_data.title || "";
     var title_size = card_data.title_size || options.default_title_size || 'normal';
     var color = card_data_color_front(card_data, options);
-    var style = "color:" + color + ";";
+    var style = "background-color:" + color + ";";
     return '<div class="card-title card-title-' + title_size + '" style="' + style + '">' + title + '</div>';
 }
 
@@ -110,7 +110,9 @@ function card_element_icon(card_data, options) {
 
 function card_element_subtitle(params, card_data, options) {
     var subtitle = params[0] || "";
-    return '<div class="card-element card-subtitle">' + subtitle + '</div>';
+    var color = card_data_color_front(card_data, options);
+    var style = "background-color:" + color + ";";
+    return '<div class="card-element card-subtitle" style="' + style + '">' + subtitle + '</div>';
 }
 
 function card_element_inline_icon(params, card_data, options) {
@@ -129,7 +131,7 @@ function card_element_picture(params, card_data, options) {
 
 function card_element_ruler(params, card_data, options) {
     var color = card_data_color_front(card_data, options);
-    var style = "border-color:" + color + ";";
+    var style = "background-color:" + color + ";";
 
     var result = "<hr class='card-rule' style='" + style + "'>";
     // result += '<svg class="card-ruler" height="1" width="100" viewbox="0 0 100 1" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">';
@@ -358,7 +360,8 @@ function card_generate_color_style(color, options) {
 }
 
 function card_generate_color_gradient_style(color, options) {
-    return 'style="background: radial-gradient(ellipse at center, white 20%, ' + color + ' 120%)"';
+    return false;
+    // return 'style="background: radial-gradient(ellipse at center, white 20%, ' + color + ' 120%)"';
 }
 
 function card_generate_front(data, options) {
